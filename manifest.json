@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Video Speed Controller",
+  "version": "1.0",
+  "description": "YouTube、Prime Videoなどの動画サイトで倍速再生を制御",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://www.amazon.com/*",
+    "https://www.amazon.co.jp/*",
+    "https://www.primevideo.com/*",
+    "https://primevideo.com/*",
+    "https://www.amazon.de/*",
+    "https://www.amazon.co.uk/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://www.amazon.com/*",
+        "https://www.amazon.co.jp/*",
+        "https://www.primevideo.com/*",
+        "https://primevideo.com/*",
+        "https://www.amazon.de/*",
+        "https://www.amazon.co.uk/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Video Speed Controller"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
